@@ -917,6 +917,7 @@ input[type=number]::-webkit-outer-spin-button {
     right: 5%;
     height:50px;
 }
+
 .title-big-container{
     background-color:#CF361A;
     border-radius: 30px;
@@ -949,7 +950,18 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 /*########################################################################################## >>> end 6*/
-/*########################################################################################## >>>>> page 7 */
+/*########################################################################################## >>>>> page 7
+ */
+.reservation-small {
+    position: absolute;
+    width: 50%;
+    top: -50px;
+    left: 25%;
+    right: 25%;
+    background-color: #CF361A;
+    border-radius: 15px;
+}
+
 .bg-white-border-30-border-2-main{
     width: 100%;
     background-color: #fff;
@@ -990,6 +1002,80 @@ input[type=number]::-webkit-outer-spin-button {
     text-align: center;
     font-size: 20px;
     display: flex;
+}
+
+/*########################################################################################## >>> end 7 */
+/*########################################################################################## >>>>> page 8 */
+.regseteration-input{
+    width: 100%;
+    height: 40px;
+    text-align: center;
+    font-size: 20px;
+    color: #CF361A;
+    background-color: white;
+    border-radius: 30px;
+    border: none;
+    outline: none;
+
+}
+
+.or-line{
+    width: 100%;
+    border-top: 1px solid white;
+    height: fit-content;
+    margin-top: 15px;
+}
+.padding-0-15-imp{
+    padding: 0px 15px !important;
+}
+.contain-facebook{
+    width: fit-content;
+    margin: 0 auto;
+    padding:11px 19px;
+    border-radius: 50%;
+    border: 1px solid white;
+}
+.fa-facebook-f{
+    font-size: 20px;
+    color: white;
+}
+.contain-twitter{
+    width: fit-content;
+    margin: 0 auto;
+    padding:11px 14px;
+    border-radius: 50%;
+    border: 1px solid white;
+}
+.fa-twitter{
+    font-size: 20px;
+    color: white;
+}
+.social-media-row{
+    width: 80%;
+    margin: auto;
+}
+.contain-google-plus{
+    width: fit-content;
+    margin: 0 auto;
+    padding:11px 12px;
+    border-radius: 50%;
+    border: 1px solid white;
+}
+.fa-google-plus-g{
+    font-size: 20px;
+    color: white;
+}
+.row-contain-small-title2{
+    position: absolute;
+    width: 90%;
+    bottom: -25px;
+    left: 5%;
+    right: 5%;
+    height:50px;
+}
+.full-size{
+    width:  100%;
+    height: 100%;
 }
 /*=============================================>>>footer*/
 .footer {
@@ -1069,6 +1155,12 @@ input[type=number]::-webkit-outer-spin-button {
     .text-align-res3{
         text-align: right;
     }
+    .text-align-res4{
+        text-align: right;
+    }
+    .social-media-row{
+        width: 100%;
+    }
 }
 /*// Small devices (landscape phones, 576px and up)*/
 @media (min-width: 576px) and (max-width: 767.98px) {
@@ -1094,6 +1186,12 @@ input[type=number]::-webkit-outer-spin-button {
     .text-align-res3{
         text-align: right;
     }
+    .text-align-res4{
+        text-align: right;
+    }
+    .social-media-row{
+        width: 100%;
+    }
 
 }
 
@@ -1113,8 +1211,14 @@ input[type=number]::-webkit-outer-spin-button {
     .text-align-res3{
         text-align: left;
     }
-
+    .text-align-res4{
+        text-align: right;
+    }
+    .social-media-row{
+        width: 80%;
+    }
 }
+
 
 /*// Large devices (desktops, 992px and up)*/
 @media (min-width: 992px) and (max-width: 1199.98px) {
@@ -1131,6 +1235,12 @@ input[type=number]::-webkit-outer-spin-button {
     }
     .text-align-res3{
         text-align: left;
+    }
+    .text-align-res4{
+        text-align: left;
+    }
+    .social-media-row{
+        width: 80%;
     }
 }
 
@@ -1149,5 +1259,11 @@ input[type=number]::-webkit-outer-spin-button {
     }
     .text-align-res3{
         text-align: left;
+    }
+    .text-align-res4{
+        text-align: left;
+    }
+    .social-media-row{
+        width: 80%;
     }
 }
