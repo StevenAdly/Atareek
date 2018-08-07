@@ -3,7 +3,6 @@
     src: url('../fonts/JF-Flat-Regular.ttf');
     font-weight: bold;
 }
-
 * {
     margin: 0px;
     padding: 0px;
@@ -554,6 +553,7 @@ p a:hover {
 .p-reservation2{padding: 100px 5% 75px 5%;}
 .p-reservation3{padding: 75px 5% 75px 5%;}
 .p-reservation6{padding: 25px 5% 75px 5%;}
+.p-reservation12{padding: 25px 5% 30px 5%;}
 
 .accept-parent{
     padding: 5px;
@@ -1077,6 +1077,49 @@ input[type=number]::-webkit-outer-spin-button {
     width:  100%;
     height: 100%;
 }
+
+/*########################################################################################## >>> end 7 */
+/*########################################################################################## >>>>> page 12 */
+.profile-img{
+    border: 2px solid white;
+    border-radius: 30px;
+    overflow: hidden;
+    position: relative;
+}
+/*########################################################################################## >>> end 12 */
+/*########################################################################################## >>>>> page 13 */
+.profile-img-edit{
+
+    /*overflow: hidden;*/
+    position: relative;
+    max-width: 200px;
+    max-height: 200px;
+    margin: 0 auto;
+}
+.profile-img-edit>img{
+    border-radius: 30px;
+    width: 100%;
+    height: 100%;
+    border: 2px solid white;
+    border-radius: 30px;
+}
+
+.test-pos-profile-img{
+    width: 20px;
+    height: 20px;
+    border: 1px solid white;
+    border-radius: 50%;
+    background-color: #FDC832;
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    right: calc(50% - 10px);
+    display: flex;
+    align-items: center;
+}
+/*########################################################################################## >>> end 12 */
+/*########################################################################################## >>>>> page 13 */
+
 /*=============================================>>>footer*/
 .footer {
     width: 100%;
@@ -1161,6 +1204,9 @@ input[type=number]::-webkit-outer-spin-button {
     .social-media-row{
         width: 100%;
     }
+    .offset-right-md-xs-3 {
+        margin-right:25%;
+    }
 }
 /*// Small devices (landscape phones, 576px and up)*/
 @media (min-width: 576px) and (max-width: 767.98px) {
@@ -1192,6 +1238,9 @@ input[type=number]::-webkit-outer-spin-button {
     .social-media-row{
         width: 100%;
     }
+    .offset-right-md-xs-3 {
+        margin-right:25%;
+    }
 
 }
 
@@ -1217,6 +1266,9 @@ input[type=number]::-webkit-outer-spin-button {
     .social-media-row{
         width: 80%;
     }
+    .offset-right-md-xs-3 {
+        margin-right:25%;
+    }
 }
 
 
@@ -1228,6 +1280,9 @@ input[type=number]::-webkit-outer-spin-button {
     .text-align-res{margin: auto auto auto 0;}
     .text-align-res2{text-align: right}
     .offset-right-4 {
+        margin-right:0;
+    }
+    .offset-right-md-xs-3{
         margin-right:0;
     }
     .text-align-res2{
@@ -1249,9 +1304,16 @@ input[type=number]::-webkit-outer-spin-button {
     .st-col-date {
         width: 20%;
     }
-    .text-align-res{margin: auto auto auto 0;}
-    .text-align-res2{text-align: left}
+    .text-align-res{
+        margin: auto auto auto 0;
+    }
+    .text-align-res2{
+        text-align: left
+    }
     .offset-right-4 {
+        margin-right:0;
+    }
+    .offset-right-md-xs-4 {
         margin-right:0;
     }
     .text-align-res2{

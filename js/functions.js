@@ -135,6 +135,17 @@ function minMaxDivSize(){
 }
 
 
+function makeSameAsWidth() {
+
+    var sameDimentionsClass = $('.same-dimentions');
+    var width;
+    for (var i = 0; i < sameDimentionsClass.length ; i++)
+    {
+        width =$(sameDimentionsClass[i]).css('width');
+        $(sameDimentionsClass[i]).css('height', width);
+    }
+}
+
 //===========================================================================
 //---------------------resize------------------------------------------------
 //===========================================================================
@@ -146,6 +157,8 @@ $(window).on("resize",function () {
     periodSize('#fromTo4','#period4');
 
     minMaxDivSize();
+
+    makeSameAsWidth();
 
     TakePlaceFunction('takePlace1');
     TakePlaceFunction('takePlace');
@@ -172,6 +185,8 @@ $(document).ready(function (){
     periodSize('#fromTo4','#period4');
 
     minMaxDivSize();
+
+    makeSameAsWidth();
 
 
     TakePlaceFunction('takePlace1');
