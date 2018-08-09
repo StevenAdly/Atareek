@@ -982,7 +982,7 @@
 .p-r-7 {padding-right: 7px;}
 .p-r-8 {padding-right: 8px;}
 .p-r-9 {padding-right: 9px;}
-.p-r-10 {padding-right: 10px;}
+.p-r-10 {padding-right: 10px !important;}
 .p-r-11 {padding-right: 11px;}
 .p-r-12 {padding-right: 12px;}
 .p-r-13 {padding-right: 13px;}
@@ -2318,9 +2318,11 @@
 /*[ float ]
 -----------------------------------------------------------
 */
-.fl-l {float: left;}
-.fl-r {float: right;}
-
+.fl-l {float: left !important;}
+.fl-r {float: right !important;}
+.clearfix{
+    clear: both;
+}
 
 /*[ Width & Height ]
 -----------------------------------------------------------

@@ -63,7 +63,55 @@
     };
 })(jQuery);
 
+//======================================>>>>>>funciton optionSelect
+function optionSelect() {
 
+    $('select').each(function(){
+        var $this = $(this), numberOfOptions = $(this).children('option').length;
+
+        $this.addClass('select-hidden');
+        $this.wrap('<div class="select"></div>');
+        $this.after('<div class="select-styled"></div>');
+
+        var $styledSelect = $this.next('div.select-styled');
+        $styledSelect.text($this.children('option').eq(0).text());
+
+        var $list = $('<ul />', {
+            'class': 'select-options'
+        }).insertAfter($styledSelect);
+
+        for (var i = 0; i < numberOfOptions; i++) {
+            $('<li />', {
+                text: $this.children('option').eq(i).text(),
+                rel: $this.children('option').eq(i).val()
+            }).appendTo($list);
+        }
+
+        var $listItems = $list.children('li');
+
+        $styledSelect.click(function(e) {
+            e.stopPropagation();
+            $('div.select-styled.active').not(this).each(function(){
+                $(this).removeClass('active').next('ul.select-options').hide();
+            });
+            $(this).toggleClass('active').next('ul.select-options').toggle();
+        });
+
+        $listItems.click(function(e) {
+            e.stopPropagation();
+            $styledSelect.text($(this).text()).removeClass('active');
+            $this.val($(this).attr('rel'));
+            $list.hide();
+            //console.log($this.val());
+        });
+
+        $(document).click(function() {
+            $styledSelect.removeClass('active');
+            $list.hide();
+        });
+
+    });
+}
 //=======================================>>> sidebar
 function sideBarFun() {
     $("#sidebar").mCustomScrollbar({
@@ -90,11 +138,6 @@ function sideBarFun() {
 
 
 
-
-// $('.arrow-parrernt').on("hover",function (){
-//     var theChild = $(this).child();
-// });
-
 var placeId;
 function TakePlaceFunction(placeId) {
     var ReservationHeight = $('.reservation').height();
@@ -116,16 +159,6 @@ $(b).css('height',periodHeight+60+'px');
 }
 
 
-
-// var number = document.getElementById('guestsNumber');
-//
-// // Listen for input event on numInput.
-// number.onchange = function(e) {
-//     if(number.value<0){
-//         number.value=0 ;
-//     }
-// }
-
 //min and max div heights at booking num 3
 function minMaxDivSize(){
   var layer2Height= $('#layer2').height();
@@ -145,6 +178,48 @@ function makeSameAsWidth() {
         $(sameDimentionsClass[i]).css('height', width);
     }
 }
+function removeSmallReservationClassAndAdd() {
+
+  if($(window).width()<768){
+      $('.reservation-small').removeClass('reservation-small').addClass('reservation-small-holder');
+  }else {
+      $('.reservation-small-holder').addClass('reservation-small').removeClass('reservation-small-holder');
+  }
+}
+
+function  megaMenuSize() {
+    var screenSize= $(window).width();
+    $('#mega-menu').css('width',screenSize+'px');
+    var navContainerWidth =$('#nav-container').width();
+    var rightPosition =(screenSize-navContainerWidth)/2;
+    $('#mega-menu').css('right',-rightPosition+'px');
+    // console.log('right pos '+rightPosition);
+}
+
+
+$('#nav-toggle-icon').on('click',function(){
+    $(this).toggleClass('fa-bars fa-times');
+});
+
+
+function maxSize() {
+    var total1Test= $('#total-1-test').height();
+    var total2Test=$('#total-2-test').height();
+    var max=0;
+    if(total1Test>total2Test){
+        max=total1Test;
+
+    }else {
+        max=total2Test;
+    }
+
+    console.log('max is'+max);
+    $('#total-2-test').css('height',max+'px');
+    $('#total-1-test').css('height',max+'px');
+
+
+
+}
 
 //===========================================================================
 //---------------------resize------------------------------------------------
@@ -156,6 +231,11 @@ $(window).on("resize",function () {
     periodSize('#fromTo3','#period3');
     periodSize('#fromTo4','#period4');
 
+    maxSize();
+    optionSelect();
+
+    megaMenuSize();
+
     minMaxDivSize();
 
     makeSameAsWidth();
@@ -163,8 +243,11 @@ $(window).on("resize",function () {
     TakePlaceFunction('takePlace1');
     TakePlaceFunction('takePlace');
 
+    removeSmallReservationClassAndAdd();
 
 });
+
+
 
 //===========================================================================
 //---------------------End resize--------------------------------------------
@@ -184,6 +267,11 @@ $(document).ready(function (){
     periodSize('#fromTo3','#period3');
     periodSize('#fromTo4','#period4');
 
+    maxSize();
+
+    optionSelect();
+    megaMenuSize();
+
     minMaxDivSize();
 
     makeSameAsWidth();
@@ -191,6 +279,8 @@ $(document).ready(function (){
 
     TakePlaceFunction('takePlace1');
     TakePlaceFunction('takePlace');
+
+    removeSmallReservationClassAndAdd();
 
 
 

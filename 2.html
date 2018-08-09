@@ -226,7 +226,7 @@
                                     <div class="period first-period" id="period1">
                                      <div class="period-title-container">
                                          <h4 class="c-main period-time-title">فطور</h4>
-                                         <input type="radio">
+                                         <input type="radio" name="period-time" >
                                      </div>
 
                                         <div class="from-to bg-main" id="fromTo1">
@@ -247,8 +247,8 @@
                             <div class="st-col-date-content">
                                 <div class="period" id="period2">
                                     <div class="period-title-container">
-                                        <h4 class="c-light-gray period-time-title">فطور</h4>
-                                        <input type="radio">
+                                        <h4 class="c-light-gray period-time-title">غدى</h4>
+                                        <input type="radio" name="period-time" disabled>
                                     </div>
 
                                     <div class="from-to bg-light-gray" id="fromTo2">
@@ -269,8 +269,8 @@
                             <div class="st-col-date-content">
                                 <div class="period" id="period3">
                                     <div class="period-title-container">
-                                        <h4 class="c-main period-time-title">فطور</h4>
-                                        <input type="radio">
+                                        <h4 class="c-main period-time-title">عصرية</h4>
+                                        <input type="radio" name="period-time">
                                     </div>
 
                                     <div class="from-to bg-main" id="fromTo3">
@@ -292,8 +292,8 @@
                             <div class="st-col-date-content">
                                 <div class="period" id="period4">
                                     <div class="period-title-container">
-                                        <h4 class="c-light-gray period-time-title">فطور</h4>
-                                        <input type="radio">
+                                        <h4 class="c-light-gray period-time-title">عشاء</h4>
+                                        <input type="radio" name="period-time" disabled>
                                     </div>
 
                                     <div class="from-to bg-light-gray" id="fromTo4">
@@ -312,25 +312,7 @@
                     <div class="clearfix"></div>
 
 
-                    <!--<div class="row t2meen dir-rtl">-->
-                        <!--<div class="col-md-7">-->
-                            <!--<h4 class="c-white fs-20 text-right">*التأمين : ١٠٠٠ ريال يسترد بعد إنتهاء الحفل</h4>-->
-                        <!--</div>-->
 
-                        <!--<div class="col-md-5 t2meen-content">-->
-                            <!--<div class="t2meen-content-inner">-->
-                                <!--<div class="row">-->
-                                    <!--<div class="col-6 accept-parent">-->
-                                        <!--<input  type="submit" value="موافق" class="accept">-->
-                                    <!--</div>-->
-                                    <!--<div class="col-6 accept-parent">-->
-                                        <!--<button class="accept">غير موافق</button>-->
-                                    <!--</div>-->
-                                <!--</div>-->
-                            <!--</div>-->
-                        <!--</div>-->
-
-                    <!--</div>-->
                     </form>
                     <!--===========================================================================-->
                 </div><!--p-t-20 p-b-20-->
@@ -446,53 +428,6 @@
 
 
 <script>
-
-    $('select').each(function(){
-        var $this = $(this), numberOfOptions = $(this).children('option').length;
-
-        $this.addClass('select-hidden');
-        $this.wrap('<div class="select"></div>');
-        $this.after('<div class="select-styled"></div>');
-
-        var $styledSelect = $this.next('div.select-styled');
-        $styledSelect.text($this.children('option').eq(0).text());
-
-        var $list = $('<ul />', {
-            'class': 'select-options'
-        }).insertAfter($styledSelect);
-
-        for (var i = 0; i < numberOfOptions; i++) {
-            $('<li />', {
-                text: $this.children('option').eq(i).text(),
-                rel: $this.children('option').eq(i).val()
-            }).appendTo($list);
-        }
-
-        var $listItems = $list.children('li');
-
-        $styledSelect.click(function(e) {
-            e.stopPropagation();
-            $('div.select-styled.active').not(this).each(function(){
-                $(this).removeClass('active').next('ul.select-options').hide();
-            });
-            $(this).toggleClass('active').next('ul.select-options').toggle();
-        });
-
-        $listItems.click(function(e) {
-            e.stopPropagation();
-            $styledSelect.text($(this).text()).removeClass('active');
-            $this.val($(this).attr('rel'));
-            $list.hide();
-            //console.log($this.val());
-        });
-
-        $(document).click(function() {
-            $styledSelect.removeClass('active');
-            $list.hide();
-        });
-
-    });
-
 </script>
 </body>
 </html>
